@@ -4,12 +4,6 @@ In this homework, we will learn more about vector search
 and embedding. Like in the module, we will use Qdrant and
 fastembed
 
-> It's possible that your answers won't match exactly. If it's the case, select the closest one.
-
-Note: if you want to learn how vector search works under
-the hood, check 
-[homework 3 from 2024 cohort (questions 1-4)](../../2024/03-vector-search/homework.md)
-
 ## Embeddings
 
 Qdrant uses [fastembed](https://github.com/qdrant/fastembed)
@@ -215,8 +209,4 @@ What's the highest score in the results?
 
 ### Answer: _0.87_
 
-
-## Submit the results
-
-* Submit your results here: https://courses.datatalks.club/llm-zoomcamp-2025/homework/hw2
-* It's possible that your answers won't match exactly. If it's the case, select the closest one.
+<video controls src="Recording 2025-07-06 021830.mp4" title="Title"></video>

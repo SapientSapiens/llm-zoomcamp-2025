@@ -209,4 +209,4 @@ What's the highest score in the results?
 
 ### Answer: _0.87_
 
-<video controls src="Recording 2025-07-06 021830.mp4" title="Title"></video>
+![alt text](<Recording 2025-07-06 021830.gif>)

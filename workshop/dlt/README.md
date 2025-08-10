@@ -26,6 +26,12 @@ What's the version of dlt that you installed?
 
 ### Answer: __1.15.0__
 
+ |                                         |                                      |
+ |-----------------------------------------|--------------------------------------|
+ |    ![alt text](images/version-dlt.png)  | ![alt text](images/dlt-init.jpg)     |
+
+
+
 
 ## dlt Resourse
 
@@ -84,6 +90,8 @@ Look for `"Normalized data for the following tables:"` in the trace output.
 
 ### Answer : __948__
 
+![alt text](images/pipeline-run.jpg)
+
 ## Question 3. Embeddings
 
 When inserting the data, an embedding model was used. Which one?
@@ -92,3 +100,5 @@ You can find this out by inspecting the `meta.json` file created
 in the target folder. During the data insertion process, a folder named db.qdrant will be created, and the meta.json file will be located inside this folder.
 
 ### Answer: __fast-bge-small-en__
+
+![alt text](images/embedding-model.jpg)

@@ -1,6 +1,5 @@
 
 import json
-
 from IPython.display import display, HTML
 import markdown
 
@@ -125,4 +124,46 @@ class ChatAssistant:
                     break
     
 
+class TerminalChatInterface:
+    def display(self, message: str):
+        """Generic display (for end of chat, system messages, etc.)"""
+        print(message)
 
+    def display_user(self, message: str):
+        print(f"You: {message}")
+
+    def display_assistant(self, message: str):
+        print(f"Assistant: {message}")
+
+    def display_tool_call(self, name: str, arguments: dict):
+        print(f"Calling tool '{name}' with arguments: {arguments}")
+
+    def display_tool_result(self, result: str):
+        print(f"Tool result: {result}")
+
+    def display_response(self, entry):
+        """Clean assistant responses (instead of dumping ResponseOutputMessage)"""
+        if hasattr(entry, "content"):
+            for c in entry.content:
+                if hasattr(c, "text") and c.text:
+                    print(f"Assistant: {c.text}")
+        else:
+            print(f"Assistant: {entry}")
+
+    def display_function_call(self, entry, result):
+        """Parse tool call results into human-friendly output"""
+        try:
+            output = result.get("output")
+            if isinstance(output, str):
+                parsed = json.loads(output)
+                if "structuredContent" in parsed and "result" in parsed["structuredContent"]:
+                    print(f"Tool result: {parsed['structuredContent']['result']}")
+                else:
+                    print(f"Tool result: {parsed}")
+            else:
+                print(f"Tool result: {output}")
+        except Exception as e:
+            print(f"Tool result (raw): {result} -- parsing error {e}")
+
+    def input(self) -> str:
+        return input("You: ")
